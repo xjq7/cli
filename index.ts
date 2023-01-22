@@ -1,4 +1,7 @@
-export function a(): void {}
+import { create } from './src/create';
 
-const b: number = 1;
-console.log(b);
+async function r() {
+  await create('n');
+}
+
+r();

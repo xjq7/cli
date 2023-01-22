@@ -1,16 +1,20 @@
 {
-  "name": "cli",
+  "name": "jqcli",
   "version": "1.0.0",
   "description": "脚手架工具",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "release-dev": "pnpm build && pnpm link .",
+    "glink": "pnpm build && pnpm link ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xjq7/cli.git"
+  },
+  "bin": {
+    "jqcli": "./dist/bin/index.js"
   },
   "keywords": [],
   "author": "",
@@ -20,9 +24,17 @@
   },
   "homepage": "https://github.com/xjq7/cli#readme",
   "dependencies": {
+    "chalk": "^5.2.0",
+    "commander": "^10.0.0",
+    "download-git-repo": "^3.0.2",
+    "figlet": "^1.5.2",
+    "inquirer": "^8.2.5",
+    "ora": "^6.1.2",
     "ts-node": "^10.9.1"
   },
   "devDependencies": {
+    "@types/figlet": "^1.5.5",
+    "@types/inquirer": "^9.0.3",
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.48.2",
